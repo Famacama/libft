@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/07 11:05:25 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 11:51:39 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/09 23:31:44 by marvin            #+#    #+#             */
+/*   Updated: 2020/01/09 23:31:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,15 @@
 #include <string.h>
 #include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const void *s, int c, size_t n)
 {
-	size_t i;
-	size_t j;
+	unsigned char *src;
 
-	i = 0;
-	j = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			j = i;
-		i++;
-	}
-	if (j == 0)
+    src = (unsigned char *)s;
+    n = 0;
+	while (src[n] != c && src[n])
+		n++;
+	if (src[n] == '\0')
 		return (NULL);
-	return ((char*)s + j);
+	return ((unsigned char *)s + n);
 }
-/*
-**int		main(void)
-**{
-**	const char s[] = "This is a string Hello i";
-**
-**	printf("%s", ft_strchr(s, 106));
-**	return (0);
-**}
-*/
