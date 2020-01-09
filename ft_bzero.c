@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 14:00:21 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/07 14:08:51 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/09 12:16:08 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void ft_bzero(void *s, int n)
 {
 	char *dest;
 	if (s == NULL)
-		return (NULL);
+		return ;
 	dest = s;
 	while (n)
 	{
@@ -24,14 +24,4 @@ void ft_bzero(void *s, int n)
 		n--;
 		dest++;
 	}
-	return (s);
-}
-
-#include <stdio.h>
-
-int		main(void)
-{
-	unsigned char *s;
-	printf("%s\n", ft_bzero(s, 6));
-	return (0);
 }

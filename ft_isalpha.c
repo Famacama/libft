@@ -6,20 +6,22 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 06:31:22 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/07 06:31:22 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/09 12:55:51 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+
 int ft_isalpha(int c)
 {
-    if((c > 64 && c < 91) || (c > 96 && c <= 123))
+    if((c > 64 && c < 91) || (c > 96 && c < 123))
         return (1);
     return (0);
 }
-
-int main(void)
-{
-    printf("%d", ft_isalpha(1010));
-    return (0);
-}
+/*
+**int main(void)
+**{
+**    printf("%d", ft_isalpha(1010));
+**    return (0);
+**}
+*/

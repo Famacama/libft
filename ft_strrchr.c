@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:05:25 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/07 11:19:18 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/09 11:51:39 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,12 @@ char	*ft_strchr(const char *s, int c)
 		return (NULL);
 	return ((char*)s + j);
 }
-
-int		main(void)
-{
-	const char s[] = "This is a string Hello i";
-
-	printf("%s", ft_strchr(s, 106));
-	return (0);
-}
+/*
+**int		main(void)
+**{
+**	const char s[] = "This is a string Hello i";
+**
+**	printf("%s", ft_strchr(s, 106));
+**	return (0);
+**}
+*/
