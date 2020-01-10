@@ -3,20 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 06:31:22 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 12:55:51 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 11:35:41 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if((c > 64 && c < 91) || (c > 96 && c < 123))
-        return (1);
-    return (0);
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	return (0);
 }
 /*
 **int main(void)

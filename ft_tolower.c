@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:48:12 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 23:48:12 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/10 12:08:48 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_to;ower(int c)
+int	ft_tolower(int c)
 {
-    if (c <= 97 && c <= 122)
-        {
-            c = c - 32;
-            return (c);
-        }
-    return (c);
+	if (c >= 65 && c <= 90)
+	{
+		c = c + 32;
+		return (c);
+	}
+	return (c);
 }

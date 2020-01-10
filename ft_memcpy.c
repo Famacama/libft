@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: famacama <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 11:32:42 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 14:27:46 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 11:41:11 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void *ft_memcpy(void *dest, const void *src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t  i;
-	unsigned char *s;
-	unsigned char *d;
+	size_t			i;
+	unsigned char	*s;
+	unsigned char	*d;
 
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;

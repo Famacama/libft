@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:00:26 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 23:00:26 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/10 11:37:19 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isdigit(int c)
+int	ft_isprint(int c)
 {
-    if(c > 31 && c < 127)
-        return (1);
-    return (0);
+	if (c > 31 && c < 127)
+		return (1);
+	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 14:08:19 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 11:49:59 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 12:40:02 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
@@ -22,14 +22,14 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	while (src[l])
 		l++;
 	if (size == 0)
-		return(l);
+		return (l);
 	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return(i);
+	return (i);
 }
 /*
 **int main(void)

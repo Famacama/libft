@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:04:26 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 16:04:26 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/10 11:36:57 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if(c > 47 && c < 58)
-        return (1);
-    return (0);
+	if (c > 47 && c < 58)
+		return (1);
+	return (0);
 }

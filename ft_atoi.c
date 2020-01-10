@@ -6,15 +6,17 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 17:36:43 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 12:09:08 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 11:40:05 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int		ft_atoi(const char *str)
 {
-	int i;
-	int s;
-	int n;
+	size_t i;
+	size_t s;
+	size_t n;
 
 	i = 0;
 	s = 1;

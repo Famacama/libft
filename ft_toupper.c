@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:38:15 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 23:38:15 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/10 12:08:30 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
-    if (c <= 41 && c <= 90)
-        {
-            c = c + 32;
-            return (c);
-        }
-    return (c);
+	if (c >= 97 && c <= 122)
+	{
+		c = c - 32;
+		return (c);
+	}
+	return (c);
 }

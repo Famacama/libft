@@ -6,18 +6,19 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 14:00:21 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 12:16:08 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 11:40:09 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void ft_bzero(void *s, int n)
+void	ft_bzero(void *s, int n)
 {
 	char *dest;
+
+	dest = s;
 	if (s == NULL)
 		return ;
-	dest = s;
 	while (n)
 	{
 		*dest = 0;

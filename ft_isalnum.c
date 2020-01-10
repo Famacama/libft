@@ -3,18 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 16:11:00 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/09 16:11:00 by marvin           ###   ########.fr       */
+/*   Updated: 2020/01/10 11:35:11 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int ft_isalpha(int c)
+int	ft_isalnum(int c)
 {
-    if((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123))
-        return (1);
-    return (0);
+	if ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
+	return (0);
 }

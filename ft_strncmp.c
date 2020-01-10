@@ -6,20 +6,24 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 09:49:44 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 12:43:28 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 12:37:25 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	unsigned char	*src;
+	unsigned char	*dest;
+	size_t			i;
 
 	i = 0;
-	while ((s1[i] == s2[i]) && s1[i] && s2[i] && i < n)
+	src = (unsigned char *)s1;
+	dest = (unsigned char *)s2;
+	while ((src[i] == dest[i] && src[i] && dest[i] && i < n))
 		i++;
-	return (s1[i] - s2[i]);
+	return (src[i] - dest[i]);
 }
 /*
 **#include <stdio.h>

@@ -6,11 +6,11 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 13:49:26 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 11:50:14 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 11:39:55 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

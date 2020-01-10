@@ -6,30 +6,35 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 11:05:25 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/09 11:51:39 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/10 12:28:05 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t i;
 	size_t j;
+	size_t x;
 
 	i = 0;
 	j = 0;
+	x = 0;
+	if (c == '\0')
+		return ((char *)s + ft_strlen(s));
 	while (s[i])
 	{
 		if (s[i] == c)
+		{
 			j = i;
+			x = 1;
+		}
 		i++;
 	}
-	if (j == 0)
+	if (x == 0)
 		return (NULL);
-	return ((char*)s + j);
+	return ((char *)s + j);
 }
 /*
 **int		main(void)
