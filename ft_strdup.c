@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 11:32:42 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/13 15:23:08 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/14 14:14:48 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/14 14:23:15 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(const char *s)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	int		i;
+	char	*dest;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
 	i = 0;
-	if (s == NULL)
+	if (!(dest = malloc(sizeof(*dest) * ft_strlen(s) + 1)))
 		return (NULL);
-	if (d == NULL)
-		return (NULL);
-	while (s[i] && i < n)
+	while (s[i])
 	{
-		d[i] = s[i];
+		dest[i] = s[i];
 		i++;
 	}
-	return ((unsigned char *)dest);
+	dest[i] = '\0';
+	return (dest);
 }
-/*
-**#include <stdio.h>
-**int main()
-**{
-**	char src[] = "test basic du memcpy !";
-**	char buff1[22];
-**	printf("%s", ft_memcpy(buff1, src, 22));
-**	return (0);
-**}
-*/

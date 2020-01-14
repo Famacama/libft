@@ -6,35 +6,34 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 15:54:00 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/10 11:41:15 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/13 12:36:22 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	unsigned char *d;
-	unsigned char *s;
+	size_t			i;
+	unsigned char	*tmp_dst;
+	unsigned char	*tmp_src;
 
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	n = 0;
-	if (s > d)
-	{
-		while (s[n])
-			n++;
-		while (n-- > 0)
-			s[n] = d[n];
-	}
-
+	tmp_dst = (unsigned char *)dst;
+	tmp_src = (unsigned char *)src;
+	i = n;
+	if (src == 0 && dst == 0)
+		return (0);
+	if (tmp_dst > tmp_src && tmp_dst < (tmp_src + n))
+		while (n > 0)
+		{
+			tmp_dst[n - 1] = tmp_src[n - 1];
+			n--;
+		}
 	else
 	{
-		while (s[n])
-		{
-			s[n] = d[n];
-			n++;
-		}
+		i = -1;
+		while (++i < n)
+			tmp_dst[i] = tmp_src[i];
 	}
-	return ((unsigned char *)dest);
+	return (dst);
 }

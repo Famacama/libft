@@ -5,34 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 14:07:37 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/10 11:41:00 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/13 12:24:21 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/13 12:41:28 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
 	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	unsigned char	*tmp_dst;
+	unsigned char	*tmp_src;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	if (d == NULL)
-		return (NULL);
-	while (s[i] && i < n && s[i] != c)
+	tmp_dst = (unsigned char *)dst;
+	tmp_src = (unsigned char *)src;
+	i = -1;
+	while (++i < n)
 	{
-		d[i] = s[i];
-		i++;
+		tmp_dst[i] = tmp_src[i];
+		if (tmp_dst[i] == (unsigned char)c)
+			return (&tmp_dst[i + 1]);
 	}
-	while (i < n)
-		((unsigned char *)d)[i++] = '\0';
-	return ((unsigned char *)dest);
+	return (NULL);
 }
 /*
 **#include <stdio.h>

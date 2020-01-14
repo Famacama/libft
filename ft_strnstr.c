@@ -6,45 +6,47 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:34:28 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/10 11:42:15 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/14 11:04:01 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strnstr(const char *dst, const char *src, size_t slen)
 {
-	size_t i;
-	size_t j;
+	size_t l;
+	size_t b;
 
-	i = 0;
-	if (!(to_find[0]))
-		return ((char *)str);
-	while (str[i] && i < len)
+	if (!ft_strlen(src) || !dst)
+		return ((char *)dst);
+	b = 0;
+	while (dst[b] && b < slen)
 	{
-		j = 0;
-		while (to_find[j] == str[i + j])
-		{
-			if (to_find[j + 1] == '\0')
-				return ((char *)str + i);
-			j++;
-		}
-		i++;
+		l = 0;
+		while (src[l] && dst[b + l] && src[l] == dst[b + l]
+			&& (b + l) < slen)
+			l++;
+		if (!src[l])
+			return ((char*)&dst[b]);
+		b++;
 	}
 	return (0);
 }
+
 /*
 **#include <stdio.h>
 **#include <string.h>
 **
 **int main(void)
 **{
-**	char str1[] = "Salut commtotent ca vas a 19";
-**	char to_find1[] = "tot";
-**	printf("%s", ft_strnstr(str1, to_find1, 15));
+**	char str1[] = "MZIRIBMZIRIBMZE123";
+**	const char *to_find1 = "MZIRIBMZE";
+**	size_t max = ft_strlen(to_find1);
+**	printf("%s", ft_strnstr(str1, to_find1, max));
 **	printf("\n");
-**	char str2[] = "Salut commtotent ca vas a 19";
-**	char to_find2[] = "tot";
-**	printf("%s", strnstr(str2, to_find2, 15));
+**	char str2[] = "MZIRIBMZIRIBMZE123";
+**	const char *to_find2 = "MZIRIBMZE";
+**	size_t max2 = ft_strlen(to_find2);
+**	printf("%s", strnstr(str2, to_find2, max2));
 **}
 */

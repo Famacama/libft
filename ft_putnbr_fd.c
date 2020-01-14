@@ -1,28 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 23:08:40 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/13 14:52:54 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/14 15:31:35 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/14 15:38:27 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*t;
+	unsigned int nbr;
 
-	i = 0;
-	s = (unsigned char *)s1;
-	t = (unsigned char *)s2;
-	while (++i < n)
-		if (s[i] != t[i])
-			return (s[i] - t[i]);
-	return (0);
+	if (n < 0)
+	{
+		nbr = -n;
+		write(fd, "-", 1);
+	}
+	else
+		nbr = n;
+	if (nbr > 9)
+	{
+		ft_putnbr_fd(nbr / 10, fd);
+		ft_putnbr_fd(nbr % 10, fd);
+	}
+	if (nbr < 10)
+	{
+		ft_putchar_fd(nbr + 48, fd);
+	}
 }

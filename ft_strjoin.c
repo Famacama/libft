@@ -1,44 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 11:32:42 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/13 15:23:08 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/14 18:17:48 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/14 21:04:18 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*d;
+	char	*tab;
+	int		i;
+	int 	j;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
 	i = 0;
-	if (s == NULL)
+	j = 0;
+	while (s1 == NULL || s2 == NULL)
 		return (NULL);
-	if (d == NULL)
+	if (!(tab = malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
-	while (s[i] && i < n)
+	while (s1[i])
 	{
-		d[i] = s[i];
+		tab[i] = s1[i];
 		i++;
 	}
-	return ((unsigned char *)dest);
+	while (s2[j])
+	{
+		tab[i] = s2[j];
+		i++;
+		j++;
+	}
+
+	tab[i] = '\0';
+	return (tab);
 }
 /*
-**#include <stdio.h>
-**int main()
+**int	main(void)
 **{
-**	char src[] = "test basic du memcpy !";
-**	char buff1[22];
-**	printf("%s", ft_memcpy(buff1, src, 22));
+**	char s1[50] = "HEllo FAama2";
+**	char s2[50] = "</>";
+**	printf("%s", ft_strjoin(s1, s2));
 **	return (0);
 **}
 */

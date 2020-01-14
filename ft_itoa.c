@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/09 23:08:40 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/13 14:52:54 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/14 21:05:55 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/14 21:32:49 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_itoa(int n)
 {
-	size_t			i;
-	unsigned char	*s;
-	unsigned char	*t;
 
-	i = 0;
-	s = (unsigned char *)s1;
-	t = (unsigned char *)s2;
-	while (++i < n)
-		if (s[i] != t[i])
-			return (s[i] - t[i]);
-	return (0);
+}
+
+int main(void)
+{
+	ft_itoa(123);
 }
