@@ -10,3 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	char			*tab;
+	unsigned int	i;
+
+	i = 0;
+	if (s == NULL)
+		return (NULL);
+	if (!(tab = malloc(sizeof(char) * len + 1)))
+		return (NULL);
+
+	while (s[start] && len != 0)
+	{
+		tab[i] = s[start];
+		i++;
+		start++;
+		len--;
+	}
+	tab[i] = '\0';
+	return (tab);
+}
