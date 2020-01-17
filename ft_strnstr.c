@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 10:34:28 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/14 11:04:01 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 11:32:09 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strnstr(const char *dst, const char *src, size_t slen)
 	size_t l;
 	size_t b;
 
-	if (!ft_strlen(src) || !dst)
+	if (!ft_strlen(src))
 		return ((char *)dst);
 	b = 0;
 	while (dst[b] && b < slen)

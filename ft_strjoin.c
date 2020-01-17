@@ -6,18 +6,17 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 18:17:48 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/14 21:04:18 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 13:47:28 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*tab;
 	int		i;
-	int 	j;
+	int		j;
 
 	i = 0;
 	j = 0;
@@ -36,7 +35,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
-
 	tab[i] = '\0';
 	return (tab);
 }

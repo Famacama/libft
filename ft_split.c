@@ -6,95 +6,85 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 13:32:17 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/16 14:19:56 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 13:30:50 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int				is_in_charset(char c, char *charset)
+static int		count_words(const char *str, char c)
 {
-	int i;
+	int	count;
+
+	count = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str && *str != c)
+		{
+			count++;
+			while (*str && *str != c)
+				str++;
+		}
+	}
+	return (count);
+}
+
+static char		*malloc_word(const char *str, char c)
+{
+	char	*word;
+	int		i;
 
 	i = 0;
-	while (charset[i])
+	while (str[i] && str[i] != c)
+		i++;
+	if (!(word = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
+	i = 0;
+	while (str[i] && str[i] != c)
 	{
-		if (c == charset[i])
-			return (1);
+		word[i] = str[i];
 		i++;
 	}
+	word[i] = '\0';
+	return (word);
+}
+
+static char		**arr_free(char **tab, int k)
+{
+	while (k)
+	{
+		free(tab[k - 1]);
+		k--;
+	}
+	free(tab);
 	return (0);
 }
 
-void			ft_strcpy(char *dest, char *src, unsigned int n)
+char			**ft_split(const char *str, char c)
 {
-	unsigned int i;
+	char	**arr;
+	int		i;
 
-	i = 0;
-	while (src[i] && i < n)
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-}
-
-unsigned int	count_words(char *str, char *charset)
-{
-	unsigned int i;
-	unsigned int nb_words;
-	unsigned int word_len;
-
-	nb_words = 0;
-	i = 0;
-	while (str[i])
-	{
-		while (str[i] && is_in_charset(str[i], charset))
-			i++;
-		word_len = 0;
-		while (str[i + word_len] && !is_in_charset(str[i + word_len], charset))
-			word_len++;
-		if (word_len)
-			nb_words++;
-		i += word_len;
-	}
-	return (nb_words);
-}
-
-char	**fill_words(char **res, char *str, char *charset, unsigned int nb_words)
-{
-	unsigned int	word_len;
-	unsigned int	i;
-	unsigned int	j;
-
-	i = -1;
-	j = 0;
-	while (++i < nb_words)
-	{
-		while (str[j] && is_in_charset(str[j], charset))
-			j++;
-		word_len = 0;
-		while (str[j + word_len] && !is_in_charset(str[j + word_len], charset))
-			word_len++;
-		res[i] = malloc(sizeof(*res[i]) * (word_len + 1));
-		if (!res[i])
-			return (NULL);
-		ft_strcpy(res[i], &str[j], word_len);
-		j += word_len;
-	}
-	return (res);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char			**res;
-	unsigned int	nb_words;
-
-	nb_words = count_words(s, c);
-	res = malloc(sizeof(*res) * (nb_words + 1));
-	if (!res)
+	if (!str || !c)
 		return (NULL);
-	res = fill_words(res, s, c, nb_words);
-	res[nb_words] = 0;
-	return (res);
+	if (!(arr = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1))))
+		return (NULL);
+	i = 0;
+	while (*str)
+	{
+		while (*str && *str == c)
+			str++;
+		if (*str && *str != c)
+		{
+			if (!(arr[i] = malloc_word(str, c)))
+				arr_free(arr, i);
+			i++;
+			while (*str && *str != c)
+				str++;
+		}
+	}
+	arr[i] = NULL;
+	return (arr);
 }

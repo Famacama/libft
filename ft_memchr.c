@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:31:44 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/13 14:38:01 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:03:30 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const char *src;
-	size_t i;
+	const char	*src;
+	size_t		i;
 
 	src = (const char *)s;
 	i = -1;

@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 11:32:42 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/13 15:23:08 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:16:14 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	s = (unsigned char *)src;
 	d = (unsigned char *)dest;
 	i = 0;
-	if (s == NULL)
+	if (s == NULL && d == NULL)
 		return (NULL);
-	if (d == NULL)
-		return (NULL);
-	while (s[i] && i < n)
+	while (i < n)
 	{
 		d[i] = s[i];
 		i++;

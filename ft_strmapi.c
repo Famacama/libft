@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 13:16:34 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/16 14:02:55 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:25:50 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*tab;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	if (!(tab = malloc(sizeof(char) * ft_strlen(s) + 1)))
 		return (NULL);

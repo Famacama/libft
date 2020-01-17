@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 17:36:43 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/14 21:05:15 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/17 14:05:29 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	size_t i;
-	int s;
-	size_t n;
+	size_t	i;
+	int		s;
+	size_t	n;
 
 	i = 0;
 	s = 1;
@@ -24,11 +24,8 @@ int	ft_atoi(const char *str)
 	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			s = -s;
-		i++;
-	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		n *= 10;
