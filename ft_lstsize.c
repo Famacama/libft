@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 11:42:44 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/18 15:34:14 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/18 12:02:32 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/18 12:51:14 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_lstsize(t_list *lst)
 {
-	char	*dest;
+	int i;
 
-	dest = s;
-	while (n)
+	i = 0;
+	while (lst)
 	{
-		*dest = c;
-		n--;
-		dest++;
+		i++;
+		lst = lst->next;
 	}
-	return (s);
+	return (i);
 }
-/*
-**#include <stdio.h>
-**
-**int		main(void)
-**{
-**	unsigned char *s;
-**	printf("%s\n", ft_memset(s, 97, 6));
-**	return (0);
-**}
-*/

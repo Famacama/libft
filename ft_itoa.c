@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 21:05:55 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 15:22:44 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/18 15:36:16 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char		*ft_itoa(int n)
 	nb = (n < 0) ? -n : n;
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
-	if (!(tab = malloc(sizeof(char) * (l + 1))))
+	if (!(tab = malloc(sizeof(char) * (l + 2))))
 		return (NULL);
 	tab[i--] = '\0';
 	if (n == 0 && (tab[0] = '0'))

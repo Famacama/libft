@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/06 11:42:44 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/18 15:34:14 by famacama         ###   ########.fr       */
+/*   Created: 2020/01/18 12:19:58 by famacama          #+#    #+#             */
+/*   Updated: 2020/01/18 12:30:05 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+t_list	*ft_lstlast(t_list *lst)
 {
-	char	*dest;
-
-	dest = s;
-	while (n)
-	{
-		*dest = c;
-		n--;
-		dest++;
-	}
-	return (s);
+	if (lst == NULL)
+		return (lst);
+	while (lst->next != NULL)
+		lst = lst->next;
+	return (lst);
 }
-/*
-**#include <stdio.h>
-**
-**int		main(void)
-**{
-**	unsigned char *s;
-**	printf("%s\n", ft_memset(s, 97, 6));
-**	return (0);
-**}
-*/
