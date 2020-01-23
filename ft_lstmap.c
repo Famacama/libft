@@ -6,32 +6,11 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 14:56:36 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/18 15:51:22 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/20 11:01:34 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-{
-	t_list *dst;
-
-	while (lst != NULL)
-	{
-		if (!(lst->next == NULL))
-		{
-			if (!(dst = malloc(sizeof(dst))))
-				return (NULL);
-		}
-		else
-			(del)(lst->content);
-		dst->content = (f)(lst->content);
-		lst = lst->next;
-		dst = dst->next;
-	}
-	return (dst);
-}
-
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {

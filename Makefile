@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nsahloum <nsahloum@student.42.fr>          +#+  +:+       +#+         #
+#    By: famacama <famacama@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/01/09 11:40:31 by nsahloum          #+#    #+#              #
-#    Updated: 2020/01/09 14:19:00 by famacama         ###   ########.fr        #
+#    Created: 2020/01/20 10:13:58 by famacama          #+#    #+#              #
+#    Updated: 2020/01/20 10:13:58 by famacama         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,8 +43,9 @@ SRCS	= 	ft_atoi.c \
 			ft_substr.c \
 			ft_strtrim.c \
 			ft_strmapi.c \
-			ft_split.c \
-			ft_lstnew.c \
+			ft_split.c 
+			
+SRCS_B =	ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -54,30 +55,32 @@ SRCS	= 	ft_atoi.c \
 			ft_lstiter.c \
 			ft_lstmap.c
 
-OBJS	= ${SRCS:.c=.o}
+OBJS			= $(SRCS:.c=.o)
 
-NAME	= libft.a
+BONUS_OBJS		= $(SRCS_B:.c=.o)
 
-CC		= gcc
+CC				= gcc
 
-RM		= rm -f
+RM				= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Wextra -Werror -I.
 
-.c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+NAME			= libft.a
 
-${NAME}:	${OBJS}
-			ar rc ${NAME} ${OBJS}
+all:			$(NAME)
 
-all:		${NAME}
+$(NAME):		$(OBJS)
+				ar rcs $(NAME) $(OBJS)
 
-clean:		
-			${RM} ${OBJS}
+clean:
+				$(RM) $(OBJS) $(BONUS_OBJS)
 
-fclean:		clean
-			${RM} ${NAME}
+fclean:			clean
+				$(RM) $(NAME)
 
-re:			fclean all
+re:				fclean $(NAME)
 
-.PHONY:		all clean fclean re
+bonus:			$(OBJS) $(BONUS_OBJS)
+				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY:			all clean fclean re bonus

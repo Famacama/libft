@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:08:40 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/13 14:52:54 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/20 15:04:57 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	unsigned char	*s;
 	unsigned char	*t;
 
-	i = 0;
+	i = -1;
 	s = (unsigned char *)s1;
 	t = (unsigned char *)s2;
 	while (++i < n)

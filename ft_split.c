@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 13:32:17 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 13:30:50 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/21 19:11:10 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		count_words(const char *str, char c)
 {
-	int	count;
+	int count;
 
 	count = 0;
 	while (*str)
@@ -51,25 +51,25 @@ static char		*malloc_word(const char *str, char c)
 	return (word);
 }
 
-static char		**arr_free(char **tab, int k)
+static char		**ft_free(char **res, int i)
 {
-	while (k)
+	while (i)
 	{
-		free(tab[k - 1]);
-		k--;
+		free(res[i - 1]);
+		i--;
 	}
-	free(tab);
-	return (0);
+	free(res);
+	return (NULL);
 }
 
 char			**ft_split(const char *str, char c)
 {
-	char	**arr;
+	char	**res;
 	int		i;
 
-	if (!str || !c)
+	if (!str)
 		return (NULL);
-	if (!(arr = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1))))
+	if (!(res = (char **)malloc(sizeof(char *) * (count_words(str, c) + 1))))
 		return (NULL);
 	i = 0;
 	while (*str)
@@ -78,13 +78,13 @@ char			**ft_split(const char *str, char c)
 			str++;
 		if (*str && *str != c)
 		{
-			if (!(arr[i] = malloc_word(str, c)))
-				arr_free(arr, i);
+			if (!(res[i] = malloc_word(str, c)))
+				return (ft_free(res, i));
 			i++;
 			while (*str && *str != c)
 				str++;
 		}
 	}
-	arr[i] = NULL;
-	return (arr);
+	res[i] = NULL;
+	return (res);
 }
