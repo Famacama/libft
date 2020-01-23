@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 14:49:34 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/20 11:01:32 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/23 10:56:16 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (!lst || !f)
+		return ;
 	while (lst != NULL)
 	{
 		(f)(lst->content);

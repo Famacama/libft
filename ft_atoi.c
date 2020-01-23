@@ -6,17 +6,17 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 17:36:43 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/21 20:34:14 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/23 11:20:59 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	size_t	i;
-	int		s;
-	size_t	n;
+	size_t		i;
+	int			s;
+	long long	n;
 
 	i = 0;
 	s = 1;
@@ -31,11 +31,11 @@ int	ft_atoi(const char *str)
 		n *= 10;
 		n += str[i] - 48;
 		i++;
+		if (n < 0 && s == -1)
+			return (0);
+		if (n < 0 && s == 1)
+			return (-1);
 	}
-	if (n > 9223372036854775808 && s == -1)
-		return (0);
-	if (n > 9223372036854775807 && s == 1)
-		return (-1);
 	n *= s;
 	return (n);
 }

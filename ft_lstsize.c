@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 12:02:32 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/20 11:01:36 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/23 10:56:16 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_lstsize(t_list *lst)
 	int i;
 
 	i = 0;
+	if (!lst)
+		return (0);
 	while (lst)
 	{
 		i++;

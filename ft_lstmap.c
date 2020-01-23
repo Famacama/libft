@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 14:56:36 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/20 11:01:34 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/23 10:56:16 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*dst;
 	t_list	*first;
 
-	if (!lst)
+	if (!lst || !f || !del)
 		return (NULL);
 	if (!(dst = ft_lstnew(f(lst->content))))
 		return (NULL);
