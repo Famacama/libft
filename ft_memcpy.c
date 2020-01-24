@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 11:32:42 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 14:16:14 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:29:15 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return ((unsigned char *)dest);
 }
-/*
-**#include <stdio.h>
-**int main()
-**{
-**	char src[] = "test basic du memcpy !";
-**	char buff1[22];
-**	printf("%s", ft_memcpy(buff1, src, 22));
-**	return (0);
-**}
-*/

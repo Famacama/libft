@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/14 18:17:48 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 13:47:28 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:29:33 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	tab[i] = '\0';
 	return (tab);
 }
-/*
-**int	main(void)
-**{
-**	char s1[50] = "HEllo FAama2";
-**	char s2[50] = "</>";
-**	printf("%s", ft_strjoin(s1, s2));
-**	return (0);
-**}
-*/

@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/06 14:08:19 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/14 10:28:44 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:29:39 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	dest[i] = '\0';
 	return (l);
 }
-
-/*
-**int main(void)
-**{
-**	char d[10];
-**	const char s[] = "fama";
-**
-**	ft_strlcpy(d, s, 5);
-**	return(0);
-**}
-*/

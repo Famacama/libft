@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/09 23:31:44 by marvin            #+#    #+#             */
-/*   Updated: 2020/01/17 14:03:30 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:29:08 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)&src[i]);
 	return (NULL);
 }
-/*
-**#include <stdio.h>
-**#include <string.h>
-**
-**int main()
-**{
-**	char *s;
-**	int size = 10;
-**
-**	s = "/|\x12\xff\x09\x42\2002\42|\\";
-**	printf("%p\n", memchr(s, '\200', size));
-**	printf("%p\n",ft_memchr(s, '\200', size));
-**	return(0);
-**}
-*/

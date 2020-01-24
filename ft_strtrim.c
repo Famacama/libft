@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 13:51:27 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 14:27:39 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:36:16 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 		l++;
 	i = ft_strlen(s1);
 	if ((i - f - l) < 0)
-	{
-		if (!(tab = malloc(sizeof(*tab) + 1)))
-			return (NULL);
-		return (tab);
-	}
+		return (ft_calloc(1, 2));
 	return (tab = ft_substr(s1, f, (i - f - l)));
 }

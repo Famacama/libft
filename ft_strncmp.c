@@ -6,7 +6,7 @@
 /*   By: famacama <famacama@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 09:49:44 by famacama          #+#    #+#             */
-/*   Updated: 2020/01/17 14:18:05 by famacama         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:29:51 by famacama         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,3 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	return (src[i] - dest[i]);
 }
-/*
-**#include <stdio.h>
-**#include <string.h>
-**
-**int main(void)
-**{
-**	const char s1[] = "Salut Famb";
-**	const char s2[] = "Salut Fama";
-**
-**	printf("%d\n", ft_strncmp(s1, s2, 5));
-**	printf("%d", strncmp(s1, s2, 5));
-**
-**	return (0);
-**}
-*/
